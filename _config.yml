@@ -1,0 +1,12 @@
+title: Jihun Kim blog
+email: jihun@uphere.ai
+description: > # this means to ignore newlines until "baseurl:"
+   Random stuff on Machine learning and DevOps.
+baseurl: "" # the subpath of your site, e.g. /blog
+#url: "http://example.com" # the base hostname & protocol for your site
+#twitter_username: jekyllrb
+github_username:  jihuni
+
+# Build settings
+markdown: kramdown
+theme: minima
