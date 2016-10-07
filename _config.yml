@@ -1,5 +1,5 @@
 title: Jihun Kim blog
-email: jihun@uphere.ai
+#email: jihun@uphere.ai
 description: > # this means to ignore newlines until "baseurl:"
    Random stuff on Machine learning and DevOps.
 baseurl: "" # the subpath of your site, e.g. /blog
