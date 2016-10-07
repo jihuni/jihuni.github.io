@@ -12,7 +12,7 @@ There are subtle things to remember for using libvirt as non-root user.
 {% highlight bash %}
 #Add my account to libvirt group. Need re-login for it becomes effective.
 sudo usermod -a -G libvirt jihuni
-#Make directory for libvirt group
+#Make directory for libvirt group.
 sudo mkdir /opt/libvirt
 sudo chgrp -R libvirt /opt/devops/
 {% endhighlight %}
@@ -36,7 +36,12 @@ virsh net-list
 cd /opt/libvirt
 qemu-img create -f qcow2 nixos.qcow2 5G
 #Launch a KVM instance!
-virt-install --name nixos --ram 2048 --disk path=nixos.qcow2,bus=virtio --vcpus 4 --os-type linux --os-variant generic --network network=vntest,model=virtio --graphics spice,listen=0.0.0.0 --cdrom nixos-minimal-16.09.680.4e14fd5-x86_64-linux.iso
+virt-install --name nixos --ram 2048 --vcpus 4 \
+    --disk path=nixos.qcow2,bus=virtio \
+    --os-type linux --os-variant generic \
+    --network network=vntest,model=virtio \
+    --graphics spice,listen=0.0.0.0 \
+    --cdrom nixos-minimal-16.09.680.4e14fd5-x86_64-linux.iso
 #Check it
 virsh list
 #Check a port number for spice and connect to it.
